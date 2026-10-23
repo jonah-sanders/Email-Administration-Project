@@ -27,7 +27,7 @@ public class Email {
 
         //Combines the components of the email address
         if (department.isEmpty()) {
-            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + comapanySuffix;
+            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + companySuffix;
         } else {
             email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
         }
