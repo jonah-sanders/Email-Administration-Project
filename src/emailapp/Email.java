@@ -65,7 +65,7 @@ public class Email {
                 case 5: return "acct";
                 case 6: return "marketing";
                 case 0: return "";
-                default: System.out.println("Invlaid option. Please input a number between 0 and 6.\n");
+                default: System.out.println("Invalid option. Please input a number between 0 and 6.\n");
             }
         }
     }
