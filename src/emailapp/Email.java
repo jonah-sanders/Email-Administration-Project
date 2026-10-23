@@ -44,7 +44,11 @@ public class Email {
 
     //Setting the mailbox capacity
     public void setInboxCapacity(int capacity) {
-        this.inboxCapacity = capacity;
+        if (capacity > 0) {
+            this.inboxCapacity = capacity;
+        } else {
+            System.out.println("Inbox capacity must be greater than 0.");
+        }
     }
     //Setting the alternate email
     public void setAlternativeEmail(String altEmail) {
@@ -53,7 +57,11 @@ public class Email {
 
     //Changing the password
     public void changePassword(String password) {
-        this.password = password;
+        if (password != null && !password.isEmpty()) {
+            this.password = password;
+        } else {
+            System.out.println("Password cannot be empty.");
+        }
     }
 
     //Getters
