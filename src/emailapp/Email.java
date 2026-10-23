@@ -1,5 +1,5 @@
 package emailapp;
-
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Email {
@@ -33,9 +33,10 @@ public class Email {
     //Generating a random password
     private String randomPassword(int length) {
         String charSelection = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890?_-+*&$#@!";
+        SecureRandom random = new SecureRandom();
         char[] password = new char[length];
         for (int i = 0; i < length; i++) {
-            int rand = (int) (Math.random() * charSelection.length());
+            int rand = random.nextInt(charSelection.length());
             password[i] = charSelection.charAt(rand);
         }
         return new String(password);
