@@ -1,6 +1,5 @@
 package emailapp;
 import java.security.SecureRandom;
-import java.util.Scanner;
 
 public class Email {
     private String firstName;
