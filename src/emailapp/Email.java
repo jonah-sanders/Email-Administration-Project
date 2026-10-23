@@ -26,7 +26,11 @@ public class Email {
         System.out.println("Your password is as follows: " + this.password);
 
         //Combines the components of the email address
-        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        if (department.isEmpty()) {
+            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + comapanySuffix;
+        } else {
+            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        }
     }
     //Asking for department
     private String setDepartment() {
