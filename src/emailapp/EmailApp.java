@@ -1,4 +1,5 @@
 package emailapp;
+import java.util.Scanner;
 
 public class EmailApp {
     public static void main(String[] args) {
@@ -16,5 +17,39 @@ public class EmailApp {
         input.close();
     }
 
-    
+    //Asking for department
+    private String setDepartment(Scanner Input, String firstName, String lastName) {        
+        while (true) {
+            System.out.print("New worker: " + firstName + " " + lastName + "\n" +
+                "DEPARTMENT OPTIONS:\n" +
+                "1 for Information Technology\n" +
+                "2 for Sales\n" +
+                "3 for Human Resources\n" +
+                "4 for Development\n" +
+                "5 for Accounting\n" +
+                "6 for Marketing\n" +
+                "0 for None\n" +
+                "Indicate your department: ");
+            
+            //Making sure the user enters a number
+            if (!input.hasNextInt()) {
+                System.out.println("Please enter a number from 0 to 6.\n");
+                input.next(); //Throws away the invalid input
+                continue;    //Prompts the user again
+            }
+            
+            int depNumber = input.nextInt();
+
+            switch (depNumber) {
+                case 1: return "it";
+                case 2: return "sales";
+                case 3: return "hr";
+                case 4: return "dev";
+                case 5: return "acct";
+                case 6: return "marketing";
+                case 0: return "";
+                default: System.out.println("Invalid option. Please input a number between 0 and 6.\n");
+            }
+        }
+    }    
 }
