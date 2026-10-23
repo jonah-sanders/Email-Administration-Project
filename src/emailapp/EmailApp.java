@@ -10,7 +10,7 @@ public class EmailApp {
 
         String department = setDepartment(input, firstName, lastName);
 
-        Email email1 = new Email("Jason", "Bourne");
+        Email email1 = new Email("Jason", "Bourne", "Human Resources");
 
         System.out.println("Your password is: " + email1.getPassword());
         System.out.println(email1.showPersonalInfo());
@@ -33,7 +33,7 @@ public class EmailApp {
     }
 
     //Asking for department
-    private String setDepartment(Scanner Input, String firstName, String lastName) {        
+    private static String setDepartment(Scanner input, String firstName, String lastName) {        
         while (true) {
             System.out.print("New worker: " + firstName + " " + lastName + "\n" +
                 "DEPARTMENT OPTIONS:\n" +
