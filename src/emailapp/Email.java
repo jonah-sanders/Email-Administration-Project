@@ -10,8 +10,8 @@ public class Email {
     private String email;
     private int inboxCapacity = 500;
     private String alternativeEmail;
-    private int defaultPasswordLength = 10;
-    private String companySuffix = "randomcompany.com";
+    private static final int DEFAULT_PASSWORD_LENGTH = 10;
+    private static final String COMPANY_SUFFIX = "randomcompany.com";
 
     //Constructor for receiving the first and last name and department
     public Email(String firstName, String lastName, String department) {
@@ -20,13 +20,13 @@ public class Email {
         this.department = department;
 
         //Calls a method that returns a random password
-        this.password = randomPassword(defaultPasswordLength);
+        this.password = randomPassword(DEFAULT_PASSWORD_LENGTH);
         
         //Combines the components of the email address
         if (department.isEmpty()) {
-            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + companySuffix;
+            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + COMPANY_SUFFIX;
         } else {
-            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+            email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + COMPANY_SUFFIX;
         }
     }
 
