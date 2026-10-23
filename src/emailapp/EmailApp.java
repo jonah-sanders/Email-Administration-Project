@@ -14,6 +14,21 @@ public class EmailApp {
 
         System.out.println("Your password is: " + email1.getPassword());
         System.out.println(email1.showPersonalInfo());
+
+        //Displaying current account settings
+        email1.setAlternativeEmail("jason.alternative@yahoo.com");
+        email1.setInboxCapacity(1000);
+        email1.changePassword("BourneI$theB3st");
+
+        System.out.println("\nUPDATED SETTINGS:");
+        System.out.println("Alternate email: " + email1.getAlternativeEmail());
+        System.out.println("Inbox capacity: " + email1.getInboxCapacity() + "mb");
+        System.out.println("Password: " + email1.getPassword());
+
+        //Checking for case conditions against invalid inputs
+        email1.setInboxCapacity(-50);
+        email1.changePassword("");
+
         input.close();
     }
 
