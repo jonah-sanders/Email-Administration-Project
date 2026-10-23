@@ -10,7 +10,7 @@ public class EmailApp {
 
         String department = setDepartment(input, firstName, lastName);
 
-        Email email1 = new Email("Jason", "Bourne", "Human Resources");
+        Email email1 = new Email(firstName, lastName, department);
 
         System.out.println("Your password is: " + email1.getPassword());
         System.out.println(email1.showPersonalInfo());
